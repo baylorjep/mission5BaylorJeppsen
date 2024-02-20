@@ -1,6 +1,49 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Book a Lesson";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="text-center">
+    <h1 class="display-4">Book a Lesson:</h1>
+    
+</div>
+<div>
+    <label for="hours">How many hours do you want?:</label>
+    <input type="number" id="hours" min="0" step="1">
+    <span id="hoursError" style="color: red;"></span>
+</div>
+<br />
+<div>
+    <label for="hourlyRate">Baylor's Hourly Rate:</label>
+    <input type="text" id="hourlyRate" value="75" readonly>
+</div>
+<br />
+<div>
+    <button id="calculateBtn" align="center">Calculate Total</button>
+</div>
+<br />
+<div>
+    <label for="total">Total:</label>
+    <input type="text" id="total" readonly>
+</div>
+
+<a asp-controller="Home" asp-action="Index">Back to Home</a>
+
+<script>
+    $(document).ready(function() {
+        $('#calculateBtn').click(function() {
+            var hours = parseFloat($('#hours').val());
+            var hourlyRate = parseFloat($('#hourlyRate').val());
+            
+            if (isNaN(hours) || hours <= 0) {
+                $('#hoursError').text('Please enter a valid number of hours.');
+                return;
+            } else {
+                $('#hoursError').text('');
+            }
+            
+            var total = hours * hourlyRate;
+            $('#total').val(total.toFixed(2));
+        });
+    });
+</script>

@@ -6,4 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\cards.HEIC" />
+    <Content Remove="wwwroot\favicon2.ico" />
+    <Content Remove="wwwroot\img\larry.jpeg" />
+    <Content Remove="wwwroot\IMG_0044.HEIC" />
+    <Content Remove="wwwroot\Jeppsen, Baylor%28web%29.jpg" />
+    <Content Remove="wwwroot\larry.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\img\" />
+  </ItemGroup>
+
 </Project>

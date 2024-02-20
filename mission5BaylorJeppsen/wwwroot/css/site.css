@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+body {
+    background-color: #333333; /* Charcoal gray background */
+    color: #ffffff; /* White text */
+}
+
+h1, p {
+    color: #ffffff; /* White text */
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
